@@ -1,4 +1,4 @@
-public class EratosthenesPrimeSieve implements PrimeSieve{
+public class EratosthenesPrimeSieve implements PrimeSieve {
 
     private int obergrenze;
 
@@ -12,20 +12,20 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
         boolean[] arr = new boolean[obergrenze];
         boolean prime = false;
         for (int i = 0; i < arr.length; i++) {
-            arr[i]=true;
+            arr[i] = true;
 
         }
         for (int i = 2; i < arr.length; i++) {
             for (int j = 2; j < arr.length; j++) {
-                if((i*j)>=arr.length){
+                if ((i * j) >= arr.length) {
                     break;
                 }
-                arr[i*j] = false;
+                arr[i * j] = false;
             }
 
         }
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i]==true&&i==p){
+            if (arr[i] == true && i == p) {
                 prime = true;
             }
         }
@@ -37,37 +37,37 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     public void printPrimes() {
         boolean[] arr = new boolean[obergrenze];
         for (int i = 0; i < arr.length; i++) {
-            arr[i]=true;
+            arr[i] = true;
 
         }
         for (int i = 2; i < arr.length; i++) {
             for (int j = 2; j < arr.length; j++) {
-                if((i*j)>=arr.length){
+                if ((i * j) >= arr.length) {
                     break;
                 }
-                arr[i*j] = false;
+                arr[i * j] = false;
             }
 
         }
         for (int i = 2; i < arr.length; i++) {
-            if(arr[i]==true){
+            if (arr[i] == true) {
                 System.out.println(i);
             }
         }
     }
 
-    public void primeAdd(){
+    public void primeAdd() {
         boolean[] arr = new boolean[obergrenze];
         for (int i = 0; i < arr.length; i++) {
-            arr[i]=true;
+            arr[i] = true;
 
         }
         for (int i = 2; i < arr.length; i++) {
             for (int j = 2; j < arr.length; j++) {
-                if((i*j)>=arr.length){
+                if ((i * j) >= arr.length) {
                     break;
                 }
-                arr[i*j] = false;
+                arr[i * j] = false;
             }
 
         }
@@ -80,18 +80,30 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
                 }
             }
         }*/
-
-        for (int i = 2; i < arr.length; i++) {
-            for (int j = 2; j < arr.length; j++) {
-                if((i%2)==0){
-                    if(arr[i]==true&&arr[j]==true){
-                        if((i+j)==i){
-                            System.out.println(i+" summe: "+i+" = "+i+" + "+j);
+        boolean run = false;
+        for (int count = 0; count < arr.length; count++) {//wenn obergrenze z.b. 40 dann letzte Zahl 38
+            for (int i = 2; i < arr.length; i++) {
+                for (int j = 2; j < arr.length; j++) {
+                    if ((i + j) <= arr.length) {
+                        if ((count % 2) == 0) {
+                            if (arr[i] == true && arr[j] == true) {
+                                if ((i + j) == count) {
+                                    System.out.println(count + " summe: " + count + " = " + i + " + " + j);
+                                    run = true;
+                                } else if (run == true) {
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
+                if (run == true) {
+                    break;
+                }
             }
+            run = false;
         }
     }
-
 }
+
+

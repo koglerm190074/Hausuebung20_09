@@ -16,9 +16,8 @@ public class Main {
                 System.out.println("Ist eine Primzahl");
             }
             eps.printPrimes();
-            System.out.println("Geben Sie eine Gerade Zahl über 1 ein!");
-            int n = Integer.parseInt(s.nextLine());
-            eps.primeAdd(n);
+            System.out.println("Summe:");
+            eps.primeAdd();
             System.out.println("Noch einmal?(j/n)");
             String answer = s.nextLine();
             if(answer.equals("n")){
