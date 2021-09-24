@@ -9,7 +9,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     @Override
     public boolean isPrime(int p) {//funktioniert ausser obergrenze = p
 
-        boolean[] arr = new boolean[obergrenze];
+        boolean[] arr = new boolean[obergrenze+1];
         boolean prime = false;
         for (int i = 0; i < arr.length; i++) {
             arr[i] = true;
@@ -35,7 +35,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     @Override
     public void printPrimes() {
-        boolean[] arr = new boolean[obergrenze];
+        boolean[] arr = new boolean[obergrenze+1];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = true;
 
@@ -57,7 +57,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     }
 
     public void primeAdd() {
-        boolean[] arr = new boolean[obergrenze];
+        boolean[] arr = new boolean[obergrenze+1];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = true;
 
@@ -71,15 +71,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
             }
 
         }
-        /*for (int i = 2; i < arr.length; i++) {
-            for (int j = 2; j < arr.length; j++) {
-                if(arr[i]==true&&arr[j]==true){
-                    if((i+j)==n){
-                        System.out.println(n+" summe: "+n+" = "+i+" + "+j);
-                    }
-                }
-            }
-        }*/
+
         boolean run = false;
         for (int count = 0; count < arr.length; count++) {//wenn obergrenze z.b. 40 dann letzte Zahl 38
             for (int i = 2; i < arr.length; i++) {
