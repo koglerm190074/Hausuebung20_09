@@ -9,10 +9,10 @@ public class Main {
             int obergrenze = Integer.parseInt(s.nextLine());
             System.out.println("Geben Sie eine zu überprüfende Zahl ein!!!");
             int prime = Integer.parseInt(s.nextLine());
-            if(prime>obergrenze){
+            /*if(prime>obergrenze){
                 System.out.println("Geben Sie eine gültige Zahl ein!");
                 break;
-            }
+            }*/
             EratosthenesPrimeSieve eps = new EratosthenesPrimeSieve(obergrenze);
             if(eps.isPrime(prime)==false){
                 System.out.println("Keine Primzahl");

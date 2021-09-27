@@ -7,9 +7,9 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     }
 
     @Override
-    public boolean isPrime(int p) {//funktioniert ausser obergrenze = p
+    public boolean isPrime(int p) {
 
-        boolean[] arr = new boolean[obergrenze+1];
+        boolean[] arr = new boolean[p+1];
         boolean prime = false;
         for (int i = 0; i < arr.length; i++) {
             arr[i] = true;
@@ -73,7 +73,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         }
 
         boolean run = false;
-        for (int count = 0; count < arr.length; count++) {//wenn obergrenze z.b. 40 dann letzte Zahl 38
+        for (int count = 0; count < arr.length; count++) {
             for (int i = 2; i < arr.length; i++) {
                 for (int j = 2; j < arr.length; j++) {
                     if ((i + j) <= arr.length) {
